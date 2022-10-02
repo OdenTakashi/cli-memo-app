@@ -1,10 +1,22 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <h1>Memo App</h1>
+
+  <router-link to="/edit">
+    <MemoList></MemoList>
+  </router-link>
+
   <router-view/>
 </template>
+
+<script>
+import MemoList from './components/MemoList.vue'
+
+  export default {
+    components: {
+      MemoList
+    }
+  }
+</script>
 
 <style>
 #app {
