@@ -3,8 +3,8 @@ import MemoEdit from '../views/MemoEdit.vue'
 
 const routes = [
   {
-    path: '/edit',
-    name: 'edit',
+    path: '/:id/edit',
+    name: 'memo-edit',
     component: MemoEdit
   }
 ]

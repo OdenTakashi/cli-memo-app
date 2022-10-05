@@ -1,11 +1,12 @@
 <template>
   <h1>Memo App</h1>
+  <div>
+    <MemoList/>
+  </div>
 
-  <router-link to="/edit">
-    <MemoList></MemoList>
-  </router-link>
-
-  <router-view/>
+  <div>
+    <router-view/>
+  </div>
 </template>
 
 <script>
