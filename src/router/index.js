@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MemoEdit from '../views/MemoEdit.vue'
+import MemoHome from '../views/MemoHome.vue'
 
 const routes = [
   {
-    path: '/:id/edit',
-    name: 'memo-edit',
-    component: MemoEdit
+    path: '/',
+    name: 'MemoHome',
+    component: MemoHome
   }
 ]
 

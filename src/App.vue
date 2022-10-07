@@ -1,22 +1,10 @@
 <template>
-  <h1>Memo App</h1>
-  <div>
-    <MemoList/>
-  </div>
-
-  <div>
+    <h1>Memo App</h1>
     <router-view/>
-  </div>
 </template>
 
 <script>
-import MemoList from './components/MemoList.vue'
 
-  export default {
-    components: {
-      MemoList
-    }
-  }
 </script>
 
 <style>
