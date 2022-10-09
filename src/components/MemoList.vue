@@ -1,7 +1,7 @@
 <template>
   <div v-for="memo in memos" v-bind:key="memo.id">
     <p v-on:click="editMemo(memo)">
-      {{ memo.content.split('\n')[0] }}
+      {{ getTitle(memo) }}
     </p>
   </div>
 </template>
@@ -14,6 +14,9 @@ export default {
   methods: {
     editMemo(memo) {
       this.$emit("editMemo", memo)
+    },
+    getTitle(memo) {
+      return memo.content.split('\n')[0]
     }
   }
 }

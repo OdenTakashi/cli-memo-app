@@ -1,10 +1,14 @@
 <template>
   <MemoList v-bind:memos="memo_items" v-on:editMemo="doEdit" />
-  <button v-on:click="addMemo">+</button>
-  <div v-if="this.editable">
+  <div class="add-btn">
+    <button class="btn-add" v-on:click="addMemo">+</button>
+  </div>
+  <div class="memo_form" v-if="this.editable">
     <MemoEdit v-bind:memos="edit_body" v-on:saveContent="updateMemo" />
-    <button v-on:click="deleteMemo">Delete</button>
-    <button v-on:click="cancelEdit">Cancel</button>
+    <div class="btn">
+      <button class="btn2" v-on:click="deleteMemo">Delete</button>
+      <button class="btn2" v-on:click="cancelEdit">Cancel</button>
+    </div>
   </div>
 </template>
 
@@ -56,5 +60,14 @@ export default {
 </script>
 
 <style scoped>
-
+.memo_form {
+  height: 300px;
+}
+.add-btn{
+  margin-bottom: 10px;
+}
+.btn-add {
+  background-color: white;
+  border: none;
+}
 </style>

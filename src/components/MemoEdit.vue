@@ -1,6 +1,8 @@
 <template>
     <textarea v-model="memo"></textarea>
-    <button v-on:click="saveContent">Save</button>
+    <div class="save-btn">
+      <button class="btn2" v-on:click="saveContent">Save</button>
+    </div>
 </template>
 
 <script>
@@ -26,6 +28,18 @@ export default {
 textarea {
   width: 25%;
   height: 200px;
+  margin-right: auto;
+  background-color: navajowhite;
+  border-radius: 10px;
+  text-align: center;
 }
+.save-btn {
+  margin-left: 300px;
+}
+.btn2 {
+  background-color: white;
+  border: 1px solid;
+}
+
 </style>
 
