@@ -1,5 +1,5 @@
 <template>
-  <textarea v-model="memo" ref="content" id="content"></textarea>
+  <textarea v-model="memo"></textarea>
   <button v-on:click="saveMemo">Save</button>
 </template>
 

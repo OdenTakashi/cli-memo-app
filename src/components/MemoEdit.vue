@@ -12,8 +12,8 @@ export default {
     MemoForm
   },
   methods: {
-    saveContent() {
-      this.$emit('doneEdit', this)
+    saveContent(memo) {
+      this.$emit('doneEdit', memo)
     }
   }
 }
