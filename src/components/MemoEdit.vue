@@ -1,19 +1,22 @@
 <template>
-  <MemoForm v-bind:content="memos" v-on:saveMemo="saveContent" />
+    <textarea v-model="memo"></textarea>
+    <button v-on:click="saveContent">Save</button>
 </template>
 
 <script>
-import MemoForm from '../components/MemoForm.vue'
 
 export default {
   name: 'MemoEdit',
   props: ["memos"],
-  components: {
-    MemoForm
+  emits: ["saveContent"],
+  data() {
+    return {
+      memo: this.memos
+    }
   },
   methods: {
-    saveContent(memo) {
-      this.$emit('doneEdit', memo)
+    saveContent() {
+      this.$emit('saveContent', this.memo)
     }
   }
 }

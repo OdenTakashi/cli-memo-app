@@ -1,8 +1,8 @@
 <template>
-  <MemoList v-bind:memos="memo_items" v-on:startEdit="doEdit" />
+  <MemoList v-bind:memos="memo_items" v-on:editMemo="doEdit" />
   <button v-on:click="addMemo">+</button>
   <div v-if="this.editable">
-    <MemoEdit v-bind:memos="edit_body" v-on:doneEdit="updateMemo" />
+    <MemoEdit v-bind:memos="edit_body" v-on:saveContent="updateMemo" />
     <button v-on:click="deleteMemo">Delete</button>
     <button v-on:click="cancelEdit">Cancel</button>
   </div>
@@ -55,6 +55,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
