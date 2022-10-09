@@ -4,6 +4,7 @@
   <div v-if="this.editable">
     <MemoEdit v-bind:memos="edit_body" v-on:doneEdit="updateMemo" />
     <button v-on:click="deleteMemo">Delete</button>
+    <button v-on:click="cancelEdit">Cancel</button>
   </div>
 </template>
 
@@ -45,6 +46,9 @@ export default {
       const index = this.memo_items.findIndex(({id}) => id === this.edit_id)
       this.memo_items.splice(index, 1)
       localStorage.setItem('memos', JSON.stringify(this.memo_items))
+      this.editable = false
+    },
+    cancelEdit() {
       this.editable = false
     }
   }

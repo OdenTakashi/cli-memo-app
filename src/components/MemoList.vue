@@ -1,7 +1,7 @@
 <template>
   <div v-for="memo in memos" v-bind:key="memo.id">
     <p v-on:click="editMemo(memo)">
-      {{ memo.content }}
+      {{ memo.content.split('\n')[0] }}
     </p>
   </div>
 </template>
@@ -18,7 +18,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
