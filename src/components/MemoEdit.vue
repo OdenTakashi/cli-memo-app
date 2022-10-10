@@ -1,7 +1,7 @@
 <template>
     <textarea v-model="memo"></textarea>
-    <div class="save-btn">
-      <button class="btn2" v-on:click="saveContent">Save</button>
+    <div class="save-field">
+      <button class="btn" v-on:click="saveContent">Save</button>
     </div>
 </template>
 
@@ -33,10 +33,10 @@ textarea {
   border-radius: 10px;
   text-align: center;
 }
-.save-btn {
+.save-field {
   margin-left: 300px;
 }
-.btn2 {
+.btn {
   background-color: white;
   border: 1px solid;
 }

@@ -1,13 +1,13 @@
 <template>
   <MemoList v-bind:memos="memo_items" v-on:editMemo="doEdit" />
-  <div class="add-btn">
+  <div class="add-field">
     <button class="btn-add" v-on:click="addMemo">+</button>
   </div>
-  <div class="memo_form" v-if="this.editable">
+  <div class="edit_field" v-if="this.editable">
     <MemoEdit v-bind:memos="edit_body" v-on:saveContent="updateMemo" />
-    <div class="btn">
-      <button class="btn2" v-on:click="deleteMemo">Delete</button>
-      <button class="btn2" v-on:click="cancelEdit">Cancel</button>
+    <div>
+      <button class="btn" v-on:click="deleteMemo">Delete</button>
+      <button class="btn" v-on:click="resetDate">Cancel</button>
     </div>
   </div>
 </template>
@@ -44,15 +44,17 @@ export default {
       const index = this.memo_items.findIndex(({id}) => id === this.edit_id)
       this.memo_items[index].content = editedContent
       localStorage.setItem('memos', JSON.stringify(this.memo_items))
-      this.editable = false
+      this.resetDate()
     },
     deleteMemo() {
       const index = this.memo_items.findIndex(({id}) => id === this.edit_id)
       this.memo_items.splice(index, 1)
       localStorage.setItem('memos', JSON.stringify(this.memo_items))
-      this.editable = false
+      this.resetDate()
     },
-    cancelEdit() {
+    resetDate() {
+      this.edit_body = ''
+      this.edit_id = ''
       this.editable = false
     }
   }
@@ -60,10 +62,10 @@ export default {
 </script>
 
 <style scoped>
-.memo_form {
+.edit_field {
   height: 300px;
 }
-.add-btn{
+.add-field {
   margin-bottom: 10px;
 }
 .btn-add {
