@@ -1,13 +1,13 @@
 <template>
-  <MemoList v-bind:memos="memo_items" v-on:editMemo="doEdit" />
+  <MemoList :memos="memo_items" @editMemo="doEdit" />
   <div class="add-field">
-    <button class="btn-add" v-on:click="addMemo">+</button>
+    <button class="btn-add" @click="addMemo">+</button>
   </div>
   <div class="edit_field" v-if="this.editable">
-    <MemoEdit v-bind:memos="edit_body" v-on:saveContent="updateMemo" />
+    <MemoEdit :memos="edit_body" @saveContent="updateMemo" />
     <div>
-      <button class="btn" v-on:click="deleteMemo">Delete</button>
-      <button class="btn" v-on:click="resetDate">Cancel</button>
+      <button class="btn" @click="deleteMemo">Delete</button>
+      <button class="btn" @click="resetDate">Cancel</button>
     </div>
   </div>
 </template>

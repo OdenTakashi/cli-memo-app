@@ -1,6 +1,6 @@
 <template>
-  <div v-for="memo in memos" v-bind:key="memo.id">
-    <p class="memo_item" v-on:click="editMemo(memo)">
+  <div v-for="memo in memos" :key="memo.id">
+    <p class="memo_item" @click="editMemo(memo)">
       {{ getTitle(memo) }}
     </p>
   </div>

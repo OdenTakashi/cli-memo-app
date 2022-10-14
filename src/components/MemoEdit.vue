@@ -1,7 +1,7 @@
 <template>
     <textarea v-model="memo"></textarea>
     <div class="save-field">
-      <button class="btn" v-on:click="saveContent">Save</button>
+      <button class="btn" @click="saveContent">Save</button>
     </div>
 </template>
 
