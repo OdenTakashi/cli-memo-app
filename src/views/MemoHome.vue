@@ -32,8 +32,10 @@ export default {
   },
   methods: {
     addMemo() {
-      this.memo_items.push({id: Date.now(), content: '新規メモ'})
+      this.edit_id = Date.now()
+      this.memo_items.push({id: this.edit_id, content: '新規メモ'})
       localStorage.setItem('memos', JSON.stringify(this.memo_items))
+      this.editable = true
     },
     doEdit(memo) {
       this.edit_body = memo.content
