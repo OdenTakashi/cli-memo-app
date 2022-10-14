@@ -73,5 +73,6 @@ export default {
 .btn-add {
   background-color: white;
   border: none;
+  cursor: pointer;
 }
 </style>

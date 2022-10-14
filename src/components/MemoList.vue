@@ -1,6 +1,6 @@
 <template>
   <div v-for="memo in memos" v-bind:key="memo.id">
-    <p v-on:click="editMemo(memo)">
+    <p class="memo_item" v-on:click="editMemo(memo)">
       {{ getTitle(memo) }}
     </p>
   </div>
@@ -23,5 +23,7 @@ export default {
 </script>
 
 <style scoped>
-
+.memo_item {
+  cursor: pointer;
+}
 </style>
